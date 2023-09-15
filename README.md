@@ -36,11 +36,6 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 First step is to create two virtual machines (VMs) in Azure. One VM will be running Windows 10 and the other will be running Linux Ubuntu Server. 
 
-<p></p>
-
-If you need direction how to create VMs in Azure, you can see my tutorial on it [here](https://github.com/klcarpio/Create-an-Azure-Account-and-Deploy-a-Virtual-Machine).
-
-<p></p>
 
 Once you have created your VMs, log into the Windows VM via Microsoft Remote Desktop. From within the VM, download [Wireshark](https://www.wireshark.org/download.html).
 
