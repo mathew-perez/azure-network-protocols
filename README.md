@@ -4,10 +4,6 @@
 
 <h1>Network Protocols and Traffic</h1>
 
-Computer networking: it is how computers communicate with each other. Understanding networking is essential in the field of Information Technology. 
-
-<p></p>
-
 In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups.
 
 <p></p>
