@@ -34,29 +34,19 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h3>Step 1: Create Virtual Machines</h3>
 
-First step is to create two virtual machines (VMs) in Azure. One VM will be running Windows 10 and the other will be running Linux Ubuntu Server. 
+The first step is to create two virtual machines (VMs) in Azure. One VM will be running Windows 10 and the other will be running Linux Ubuntu Server. 
 
 
 Once you have created your VMs, log into the Windows VM via Microsoft Remote Desktop. From within the VM, download [Wireshark](https://www.wireshark.org/download.html).
 
-<p>
-<img src="https://i.imgur.com/RNIQfXU.png" height="80%" width="80%" alt="1."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/ea51d2df-0617-4e9f-85c8-4e94ae4d7157)
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/189bdb4a-ea1b-4bc4-9de8-4c521c70c98e)
 
-<p>
-<img src="https://i.imgur.com/rs7U7jF.jpg" height="80%" width="80%" alt="2."/>
-</p>
-
-<p>
-<img src="https://i.imgur.com/8yQQZhk.png" height="80%" width="80%" alt="3."/>
-</p>
 
 <h3>Step 2: Observe ICMP Traffic</h3>
 Next, we'll begin to use Wireshark. Wireshark is a network protocol analyzer and you can use it to observe the capturing of packets from a network connection. Before starting, grab the private Internet Protocol (IP) address of the Linux VM first.
 
-<p>
-<img src="https://i.imgur.com/3pIAgHZ.png" height="80%" width="80%" alt="4."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/285f3a88-612c-4bbe-9d3c-014982aaf983)
 
 Internet Control Message Proctol or ICMP is a network protocol that determines if there is communication issues. It is primarily used to report errors. 
 
@@ -64,54 +54,29 @@ Internet Control Message Proctol or ICMP is a network protocol that determines i
 
 Next, open up Wireshark and Windows Powershell. In Wireshark, type in "icmp" in the green bar. In Powershell ping the Linux VM's private IP address (10.0.0.5 in my example). Then ping a public website (Google). Observe the network traffic in both Wireshark and Powershell. Then setup a perpetual ping using "ping -t" + Linux VM's private IP in Powershell. 
 
-<p>
-<img src="https://i.imgur.com/kMrYzBv.png" height="80%" width="80%" alt="5."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/812f16fb-6b44-4f19-86d8-865948232485)
 
-<p>
-<img src="https://i.imgur.com/TCqeO8Y.png" height="80%" width="80%" alt="6."/>
-</p>
-
-<p>
-<img src="https://i.imgur.com/8Xf0HsI.png" height="80%" width="80%" alt="7."/>
-</p>
 
 Next, we'll observe what happens when we block the ICMP traffic. Go back to the Linux VM's Azure Portal, then click on Networking. From Networking, click "Add inbound port rule" -> check ICMP -> check Deny, then click "Add". 
 
 <p></p>
 This area of Azure is known as Network Security Groups (NSGs). It is basically a firewall in Azure as you can set security rules for your resources. 
 
-<p>
-<img src="https://i.imgur.com/e6iXBCO.png" height="80%" width="80%" alt="8."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/bcaa9376-0649-4956-be02-59eecab3ad28)
 
-<p>
-<img src="https://i.imgur.com/PrGxlov.png" height="80%" width="80%" alt="9."/>
-</p>
-
-<p>
-<img src="https://i.imgur.com/bwpeK06.png" height="80%" width="80%" alt="10."/>
-</p>
-
-<p>
-<img src="https://i.imgur.com/OauiJnP.png" height="80%" width="80%" alt="11."/>
 </p>
 
 Once this is done, go back into the Windows VM and observe the changes in Wireshark and Powershell. Since ICMP traffic is being denied, the requests to are timing out and are showing no response.
 
-<p>
-<img src="https://i.imgur.com/67vfgoD.png" height="80%" width="80%" alt="12."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/8abd21b0-3a4c-45f2-9f33-39b8a7079e9f)
+
 
 Next, we'll go back to the Azure Portal and set allow ICMP traffic again. You can either delete the rule or set it to allow. Observe the changes in Wireshark and Powershell again. To stop the perpetual ping, just press "Control" + "C". 
 
-<p>
-<img src="https://i.imgur.com/rGYfCyI.png" height="80%" width="80%" alt="13."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/d4ca3ee2-318c-46c3-9592-4bd8f416adc4)
 
-<p>
-<img src="https://i.imgur.com/DumDUJd.png" height="80%" width="80%" alt="14."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/99823a42-9493-4d8f-8a1a-9480e7d95c1a)
+
 
 <h3>Step 3: Observe SSH Traffic</h3>
 Next, we'll observe SSH traffic. Secure Shell Protocol or SSH is a network protocol which allows a secure connection to another machines Command Line Interface (CLI). 
