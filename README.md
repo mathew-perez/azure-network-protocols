@@ -82,15 +82,9 @@ Next, we'll go back to the Azure Portal and set allow ICMP traffic again. You ca
 Next, we'll observe SSH traffic. Secure Shell Protocol or SSH is a network protocol which allows a secure connection to another machines Command Line Interface (CLI). 
 
 <p> </p>
-Filter ssh traffic in Wireshark. Then type "ssh" + the Linux VM's private IP address. Powershell will prompt you to login, so use the Linux VM's login credentials. Once you are logged in via SSH, you can begin to play around with it by using Linux commands such as "cd", "pwd", etc. To exit SSH just type "exit". 
+Filter ssh traffic in Wireshark. Then type "ssh" + the Linux VM's private IP address. Powershell will prompt you to login, and enter the Linux VM's login credentials. Once you are logged in via SSH, you can begin to play around with it by using Linux commands such as "cd", "pwd", etc. To exit SSH just type "exit". 
 
-<p>
-<img src="https://i.imgur.com/2hRFoSS.png" height="80%" width="80%" alt="15."/>
-</p>
-
-<p>
-<img src="https://i.imgur.com/sa57YlF.png" height="80%" width="80%" alt="16."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/50ac62c4-bd91-42f0-98fe-f808057bfc68)
 
 <h3>Step 4: Observe DHCP Traffic</h3>
 Next, we'll observe DHCP traffic. Dynamic Host Configuration Protocol or DHCP is the network protocol responsible for automatically assigning IP addresses.
@@ -98,29 +92,21 @@ Next, we'll observe DHCP traffic. Dynamic Host Configuration Protocol or DHCP is
 <p></p>
 Filter DHCP traffic in Wireshark. In Powershell, type the command "ipconfig /renew" and observe the changes. 
 
-<p>
-<img src="https://i.imgur.com/DI56TjI.png" height="80%" width="80%" alt="17."/>
-</p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/e58305a3-9e10-4111-ace3-9c037453904e)
+
 
 <h3>Step 5: Observe DNS Traffic</h3>
 Next, we'll observe DNS traffic. Domain Name System or DNS is the network protocol that transforms Fully Qualified Domain Names (FQDNs) into their assigned IP addresses. Type DNS in Wireshark and the command nslookup. I used Google and Disney in this example. 
 
-<p></p>
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/ebb5fcf6-b4fa-4a15-bfa2-2274af81b1e1)
 
-If you want to learn about DNS, please see my lab on it [here](https://github.com/klcarpio/Understanding-DNS).
-
-<p>
-<img src="https://i.imgur.com/vnVMyIj.png" height="80%" width="80%" alt="18."/>
-</p>
 
 <h3>Step 6: Observe RDP Traffic</h3>
-Finally, we'll observe RDP traffic. Remote Desktop Protoctol or RDP is the protocol that allows the remote connection to another computer and complete control of the Graphical User Interface (GUI). Type RDP in Wireshark and observe the traffic. Since it is a VM, you can see there is a lot of RDP traffic. 
+Finally, we'll observe RDP traffic. Remote Desktop Protoctol or RDP is the protocol that allows the remote connection to another computer and complete control of the Graphical User Interface (GUI). Type tcp.port ==3389 in Wireshark and observe the traffic. Since we connected to the VM using remote desktop protocol you can see there is a lot of RDP traffic. 
 
-<p>
-<img src="https://i.imgur.com/7IuT1yZ.png" height="80%" width="80%" alt="19."/>
-</p>
-
-Thank you for checking out this tutorial. It should have helped you gain a better understanding of network protocols and how network traffic works. 
+![image](https://github.com/mathew-perez/azure-network-protocols/assets/144407220/3fd59da7-6655-4f8d-9a5f-ea1633af2c38)
 
 
-**REMEMBER TO DELETE YOUR RESOURCES ONCE YOU ARE DONE WITH THE LAB!**
+Thank you for checking out this tutorial. It should have helped you gain a better understanding of network protocols and different types of network traffic.
+
+REMEMBER TO DELETE YOUR RESOURCES IN MICROSOFT AZURE ONCE YOU ARE DONE WITH THE LAB
