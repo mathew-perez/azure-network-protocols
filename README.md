@@ -107,5 +107,3 @@ Finally, we'll observe RDP traffic. Remote Desktop Protoctol or RDP is the proto
 
 
 Thank you for checking out this tutorial. It should have helped you gain a better understanding of network protocols and different types of network traffic.
-
-REMEMBER TO DELETE YOUR RESOURCES IN MICROSOFT AZURE ONCE YOU ARE DONE WITH THE LAB
